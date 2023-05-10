@@ -1,16 +1,20 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-class order{
-  int orderID;
+
+class Order {
+  private:
+    int orderID;
     string deliveryLocation;
     double discountPercentage;
     double price;
+
   public:
-  Order(int id, double p) {
+    Order(int id, double p) {
       orderID = id;
       price = p;
     }
-  void setDeliveryLocation(string location) {
+
+    void setDeliveryLocation(string location) {
       deliveryLocation = location;
     }
 
@@ -30,12 +34,14 @@ class order{
       double totalPayableAmount = price - (price * discountPercentage / 100) + 50;
       return totalPayableAmount;
     }
-  void displayOrder() {
+
+    void displayOrder() {
       cout << "Order ID: " << orderID << endl;
       cout << "Delivery Location: " << deliveryLocation << endl;
       cout << "Total Payable Amount: $" << getTotalPayableAmount() << endl;
     }
 };
+
 int main() {
   int orderId;
   double price;
